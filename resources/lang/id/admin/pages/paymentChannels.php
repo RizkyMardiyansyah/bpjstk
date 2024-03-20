@@ -1,0 +1,23 @@
+<?php
+return [
+  'payment_channels' => 'Metode Pembayaran',
+  'payment_channel' => 'Metode Pembayaran',
+  'payment_channel_edit' => 'Edit Metode Pembayaran',
+  'title' => 'Judul',
+  'tags_count' => 'Jumlah tag',
+  'new_page_lead' => 'Anda dapat membuat Metode_Pembayaran Baru.',
+  'parent_name' => 'Nama Orang Tua',
+  'select_parent_name' => 'Pilih Nama Orang Tua',
+  'payment_channel_count' => 'Kategori dihitung',
+  'page_lists_lead' => 'Daftar metode_pembayaran. Anda dapat mengedit atau menghapus baris mana pun.',
+  'sub_payment_channel' => 'Sub metode_pembayaran',
+  'has_sub_payment_channel' => 'Memiliki sub metode_pembayaran',
+  'add_sub_payment_channel' => 'Tambahkan sub metode_pembayaran',
+  'add' => 'Menambahkan',
+  'remove' => 'Menghapus',
+  'admin_payment_channel' => 'Metode Pembayaran',
+  'admin_payment_channel_list' => 'Daftar Metode Pembayaran',
+  'admin_payment_channel_create' => 'Metode Pembayaran Buat',
+  'admin_payment_channel_edit' => 'Edit Metode Pembayaran',
+  'admin_payment_channel_delete' => 'Hapus Metode Pembayaran',
+];

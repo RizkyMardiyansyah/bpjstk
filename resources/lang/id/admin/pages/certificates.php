@@ -1,0 +1,22 @@
+<?php 
+return [
+  'certificate_list_page_title' => 'Daftar sertifikat',
+  'certificate' => 'Sertifikat',
+  'title' => 'Judul',
+  'tags_count' => 'Jumlah tag',
+  'new_page_lead' => 'Anda dapat Buat sertifikat baru.',
+  'parent_name' => 'Nama orang tua',
+  'select_parent_name' => 'Pilih nama orang tua',
+  'certificate_count' => 'Sertifikat diperhitungkan',
+  'page_lists_lead' => 'Daftar sertifikat. Anda dapat mengedit atau Hapus baris mana pun.',
+  'sub_certificate' => 'Sub sertifikat',
+  'has_sub_certificate' => 'Memiliki sub sertifikat',
+  'add_sub_certificate' => 'Tambahkan sub sertifikat',
+  'add' => 'Menambahkan',
+  'remove' => 'Hapus',
+  'admin_certificate' => 'Sertifikat',
+  'admin_certificate_list' => 'Daftar Sertifikat',
+  'admin_certificate_create' => 'Pembuatan Sertifikat',
+  'admin_certificate_edit' => 'Pengeditan Sertifikat',
+  'admin_certificate_delete' => 'Penghapusan Sertifikat',
+];
