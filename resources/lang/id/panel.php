@@ -64,7 +64,7 @@ return [
  itu akan muncul di daftar ini.',
   'my_comments_no_result' => 'Anda tidak Buat komentar apa pun!',
   'my_comments_no_result_hint' => 'Komentar anda akan membantu meningkatkan kualitas komunitas...',
-  'my_purchases' => 'Kelas Saya',
+  'my_purchases' => 'Pembelian Saya',
   'no_result_purchases' => 'Tidak Ada Kursus yang Dibeli!',
   'no_result_purchases_hint' => 'Mulailah belajar dari instruktur terbaik dan nikmati...',
   'purchase_date' => 'Tanggal Pembelian',

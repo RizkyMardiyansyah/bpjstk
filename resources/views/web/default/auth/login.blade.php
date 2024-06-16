@@ -93,10 +93,10 @@
                         <a href="/forget-password" target="_blank">{{ trans('auth.forget_your_password') }}</a>
                     </div>
 
-                    {{-- <div class="mt-20 text-center">
+                    <div class="mt-20 text-center">
                         <span>{{ trans('auth.dont_have_account') }}</span>
                         <a href="/register" class="text-secondary font-weight-bold">{{ trans('auth.signup') }}</a>
-                    </div> --}}
+                    </div>
                 </div>
             </div>
         </div>

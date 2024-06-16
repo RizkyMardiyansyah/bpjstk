@@ -90,11 +90,11 @@
             </div>
         </div>
 
-        {{-- <div class="flex-fill col-sm-12">
+        <div class="flex-fill col-sm-12">
             <div class="m-2">
                 @include('web.default.panel.dashboard.diaryChart')
             </div>
-        </div> --}}
+        </div>
         {{-- <div class="flex-fill col-sm-12">
             <div class="m-2">
                 @include('web.default.panel.dashboard.coursesPublish')

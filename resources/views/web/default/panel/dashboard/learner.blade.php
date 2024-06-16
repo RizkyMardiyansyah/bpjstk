@@ -76,12 +76,12 @@
             <x-card-summary-stats2 title="{{__('home.total_hours')}}" value="{{ floor($activeHoursCount). ' ' . __('home.hours') }}" />
             </div>
         </div> --}}
-        {{-- <div class="mt-4 col-12">
+        <div class="mt-4 col-12">
             <h3 class="text-dark-blue ">{{__('admin/main.meeting')}}</h3>
             <div class="mt-2">
             <x-card-summary-stats3 style="" title="{{__('home.total_hours')}}" value="{{ floor($activeHoursCount). ' ' . __('home.hours_session') }}" icon="session.svg" />
             </div>
-        </div> --}}
+        </div>
     </div>
     {{-- <div class="row">
         <div class="mt-2 col-12">
@@ -97,13 +97,13 @@
 
     
 
-    {{-- <div class="  flex-fill col-sm-12 col-md-6 col-lg-6">
+    <div class="  flex-fill col-sm-12 col-md-6 col-lg-6">
     <div class="mt-4">
         @include('web.default.panel.dashboard.noticeboard2')
     </div>
-    </div> --}}
+    </div>
 
-    {{-- <div class="  flex-fill col-sm-12 col-md-6 col-lg-6">
+    <div class="  flex-fill col-sm-12 col-md-6 col-lg-6">
         <div class="mt-4">
             @include('web.default.panel.dashboard.diary')
         </div>
@@ -112,12 +112,12 @@
         <div class="mt-4">
             @include('web.default.panel.dashboard.topRank')
         </div>
-    </div> --}}
-    {{-- <div class="flex-fill col-sm-12">
+    </div>
+    <div class="flex-fill col-sm-12">
         <div class="mt-4 m-2">
             @include('web.default.panel.dashboard.diaryChart')
         </div>
-    </div> --}}
+    </div>
         
 </div>
 {{-- <div style="margin-top:-80px;">

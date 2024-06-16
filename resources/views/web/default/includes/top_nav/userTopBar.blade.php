@@ -102,11 +102,11 @@
                 <span>{{ trans('auth.login') }}</span>
             </a>
         </div>
-        {{-- <div class="topRegister navbar-auth-user-dropdown-item">
+        <div class="topRegister navbar-auth-user-dropdown-item">
             <a href="/register?redirect={{ request()->url() }}" class="d-flex align-items-center px-15 py-15 text-dark-blue font-14 bg-transparent">
                 <span>{{ trans('auth.register') }}</span>
             </a>
-        </div> --}}
+        </div>
         
         {{-- <a href="/login?redirect={{ request()->url() }}" class="py-5 px-10 mr-10 text-dark-blue font-14 ">{{ trans('auth.login') }}</a>
         <a href="/register?redirect={{ request()->url() }}" class="py-5 px-10 text-dark-blue font-14">{{ trans('auth.register') }}</a> --}}

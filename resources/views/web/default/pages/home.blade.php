@@ -106,14 +106,14 @@
                 <div style="flex-grow: 1;">
                     <img style="width: 100%" src="/assets/default/img/icons/image1.svg">
                 </div>
-                {{-- <div class="ml-auto">
+                <div class="ml-auto">
                     <a href="/contributors" class="btn btn-primary registernow">{{ trans('home.see_contributor') }}
                         <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20.7806 12.5306L14.0306 19.2806C13.8899 19.4213 13.699 19.5003 13.5 19.5003C13.301 19.5003 13.1101 19.4213 12.9694 19.2806C12.8286 19.1398 12.7496 18.949 12.7496 18.7499C12.7496 18.5509 12.8286 18.36 12.9694 18.2193L18.4397 12.7499H3.75C3.55109 12.7499 3.36032 12.6709 3.21967 12.5303C3.07902 12.3896 3 12.1988 3 11.9999C3 11.801 3.07902 11.6103 3.21967 11.4696C3.36032 11.3289 3.55109 11.2499 3.75 11.2499H18.4397L12.9694 5.78055C12.8286 5.63982 12.7496 5.44895 12.7496 5.24993C12.7496 5.05091 12.8286 4.86003 12.9694 4.7193C13.1101 4.57857 13.301 4.49951 13.5 4.49951C13.699 4.49951 13.8899 4.57857 14.0306 4.7193L20.7806 11.4693C20.8504 11.539 20.9057 11.6217 20.9434 11.7127C20.9812 11.8038 21.0006 11.9014 21.0006 11.9999C21.0006 12.0985 20.9812 12.1961 20.9434 12.2871C20.9057 12.3782 20.8504 12.4609 20.7806 12.5306Z" fill="currentColor"/>
                         </svg>
                     </a>
                     
-                </div> --}}
+                </div>
             </div>
             
             
@@ -153,13 +153,13 @@
                 <div style="flex-grow: 1;">
                     <img style="width: 100%" src="/assets/default/img/icons/image2.svg">
                 </div>
-                {{-- <div class="ml-auto ml-lg-0">
+                <div class="ml-auto ml-lg-0">
                     <a href="/register" class="btn btn-primary registernow">{{ trans('home.register_now') }}
                         <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20.7806 12.5306L14.0306 19.2806C13.8899 19.4213 13.699 19.5003 13.5 19.5003C13.301 19.5003 13.1101 19.4213 12.9694 19.2806C12.8286 19.1398 12.7496 18.949 12.7496 18.7499C12.7496 18.5509 12.8286 18.36 12.9694 18.2193L18.4397 12.7499H3.75C3.55109 12.7499 3.36032 12.6709 3.21967 12.5303C3.07902 12.3896 3 12.1988 3 11.9999C3 11.801 3.07902 11.6103 3.21967 11.4696C3.36032 11.3289 3.55109 11.2499 3.75 11.2499H18.4397L12.9694 5.78055C12.8286 5.63982 12.7496 5.44895 12.7496 5.24993C12.7496 5.05091 12.8286 4.86003 12.9694 4.7193C13.1101 4.57857 13.301 4.49951 13.5 4.49951C13.699 4.49951 13.8899 4.57857 14.0306 4.7193L20.7806 11.4693C20.8504 11.539 20.9057 11.6217 20.9434 11.7127C20.9812 11.8038 21.0006 11.9014 21.0006 11.9999C21.0006 12.0985 20.9812 12.1961 20.9434 12.2871C20.9057 12.3782 20.8504 12.4609 20.7806 12.5306Z" fill="currentColor"/>
                         </svg>
                     </a>
-                </div> --}}
+                </div>
             </div>
         </div>
     </div>
@@ -875,7 +875,7 @@
             </section>
         @endif
 
-        {{-- @if($homeSection->name == \App\Models\HomeSection::$instructors and !empty($instructors) and !$instructors->isEmpty())
+        @if($homeSection->name == \App\Models\HomeSection::$instructors and !empty($instructors) and !$instructors->isEmpty())
             <section class="home-sections container mt-50">
                 <div class=" justify-content-between">
                     <div class=" text-center">
@@ -884,7 +884,7 @@
 
                     </div>
 
-                    
+                    {{-- <a href="/instructors" class="btn btn-border-white">{{ trans('home.all_instructors') }}</a> --}}
                 </div>
 
                 <div class="position-relative mt-20 ltr">
@@ -903,7 +903,17 @@
                                             </a>
 
                                             <p class="font-14 text-gray mt-5">{{ $instructor->bio }}</p>
-                                            
+                                            {{-- <div class="stars-card d-flex align-items-center justify-content-center mt-10">
+                                                @php
+                                                    $i = 5;
+                                                @endphp
+                                                @while(--$i >= 5 - $instructor->rates())
+                                                    <i data-feather="star" width="20" height="20" class="active"></i>
+                                                @endwhile
+                                                @while($i-- >= 0)
+                                                    <i data-feather="star" width="20" height="20" class=""></i>
+                                                @endwhile
+                                            </div> --}}
 
                                             @if(!empty($instructor->hasMeeting()))
                                                 <a href="{{ $instructor->getProfileUrl() }}?tab=appointments" class="btn btn-primary btn-sm rounded-pill mt-15">{{ trans('home.reserve_a_live_class') }}</a>
@@ -919,10 +929,10 @@
                     </div>
                 </div>
             </section>
-        @endif --}}
+        @endif
 
         {{-- Ads Bannaer --}}
-        {{-- @if($homeSection->name == \App\Models\HomeSection::$half_advertising_banner and !empty($advertisingBanners2) and count($advertisingBanners2))
+        @if($homeSection->name == \App\Models\HomeSection::$half_advertising_banner and !empty($advertisingBanners2) and count($advertisingBanners2))
             <div class="home-sections container">
                 <div class="row">
                     @foreach($advertisingBanners2 as $banner2)
@@ -934,7 +944,7 @@
                     @endforeach
                 </div>
             </div>
-        @endif --}}
+        @endif
         {{-- ./ Ads Bannaer --}}
 
         {{-- @if($homeSection->name == \App\Models\HomeSection::$organizations and !empty($organizations) and !$organizations->isEmpty())
