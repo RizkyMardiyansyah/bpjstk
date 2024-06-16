@@ -53,11 +53,11 @@
 <h3 class="text-gray-800">{{__('panel.teacher')}}</h3> --}}
 
 <!-- This is the first row -->
-<div class="row ml-4 mr-4 mt-4  justify-content-between align-items-center">
+{{-- <div class="row ml-4 mr-4 mt-4  justify-content-between align-items-center">
     <h3 class="text-dark-blue">{{__('admin/main.session')}}</h3>
     <a href="/panel/meetings/requests" class="view ml-auto">{{__("admin/main.view_more")}}</a>
-</div>
-<div class="flex-fill row ml-2 mb-2 mr-2">
+</div> --}}
+{{-- <div class="flex-fill row ml-2 mb-2 mr-2">
     @php
         $stats = [
             [
@@ -85,7 +85,7 @@
         <div class="mt-2">
             <x-card-summary-stats title="{{ $stat['title'] }}" value="{{ $stat['value'] }}" icon="{{ $stat['title'] }}.svg" />
         </div>
-    </div>
+    </div> --}}
 
     
 
@@ -94,7 +94,7 @@
         {{-- <a class=" mt-2 col-lg-3 col-md-6 col-sm-12">
             <x-card-summary-stats title="{{ $stat['title'] }}" value="{{ $stat['value'] }}" icon="{{ $stat['title'] }}.svg" />
         </a> --}}
-    @endforeach
+    {{-- @endforeach --}}
 
 
 <!-- This is the second row -->
@@ -112,28 +112,28 @@
             <x-card-summary  value="{{ $myWebinarsCount}} {{ trans('panel.classes') }} " icon="coursus.svg" />
         </div>
     </div> --}}
-    <div class="flex-fill col-lg-6 col-md-6 col-sm-12">
+    {{-- <div class="flex-fill col-lg-6 col-md-6 col-sm-12">
         <div class="row m-0 mt-4 justify-content-between align-items-center">
             <h3 class="text-dark-blue">{{__('admin/main.total_students')}}</h3>
-            {{-- <a href="/panel/webinars" class="view ml-auto">{{__("admin/main.view_more")}}</a> --}}
+            <a href="/panel/webinars" class="view ml-auto">{{__("admin/main.view_more")}}</a>
         </div>
 
         <div class="mt-2">
             <x-card-summary-stats3  value="{{ $totalCount }} {{ trans('admin/main.students') }}" icon="student.svg" />
         </div>
-    </div>
-    <div class="flex-fill col-lg-6 col-md-6 col-sm-12">
+    </div> --}}
+    {{-- <div class="flex-fill col-lg-6 col-md-6 col-sm-12">
         <div class="mt-4">
             @include('web.default.panel.dashboard.noticeboard2')
         </div>
-    </div>
+    </div> --}}
 
 
-    <div class="flex-fill col-sm-12 col-md-6 col-lg-6">
+    {{-- <div class="flex-fill col-sm-12 col-md-6 col-lg-6">
     <div class="mt-4">
         @include('web.default.panel.dashboard.diary')
     </div>
-    </div>
+    </div> --}}
 
 
     {{-- <div class="  flex-fill col-sm-12 col-md-6 col-lg-6">
@@ -146,7 +146,7 @@
             @include('web.default.panel.dashboard.topOrganization')
         </div>
     </div> --}}
-    <div class="  flex-fill col-sm-12 col-md-6 col-lg-6">
+    {{-- <div class="  flex-fill col-sm-12 col-md-6 col-lg-6">
         <div class="mt-4">
             @include('web.default.panel.dashboard.topRank')
         </div>
@@ -155,7 +155,7 @@
         <div class="mt-4 mt-2">
             @include('web.default.panel.dashboard.diaryChart')
         </div>
-    </div>
+    </div> --}}
         
 </div>
 {{-- <div style="margin-top:-80px;">
