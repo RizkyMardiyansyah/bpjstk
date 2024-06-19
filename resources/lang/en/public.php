@@ -363,7 +363,7 @@ return [
     'all_roles' => 'All Types',
 
     'error_404_page_title' => 'Page not found',
-    'i_passed_this_lesson' => 'I passed this lesson',
+    'i_passed_this_lesson' => 'Completed',
     'course_learning_change_status_success' => 'Your learning status successfully changed.',
     'course_learning_change_status_error' => 'Failed to change learning status.',
     'course_learning_passed' => ':percent% of the course is passed.',

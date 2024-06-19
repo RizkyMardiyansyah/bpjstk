@@ -32,7 +32,7 @@
     <div>
         <div class="">
             <span class="font-weight-500 font-14 text-dark-blue d-block">{{ $item->title }}</span>
-            <span class="font-12 text-gray d-block">{{ $hintText }}</span>
+            {{-- <span class="font-12 text-gray d-block">{{ $hintText }}</span> --}}
         </div>
 
 
