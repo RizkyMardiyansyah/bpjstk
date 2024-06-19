@@ -1,103 +1,70 @@
 <div class="li">
-
 @push('styles_top')
+    <link rel="stylesheet" href="/assets/default/vendors/select2/select2.min.css">
     <link rel="stylesheet" href="/assets/default/vendors/daterangepicker/daterangepicker.min.css">
+    <link rel="stylesheet" href="/assets/vendors/summernote/summernote-bs4.min.css">
     <link href="/assets/default/vendors/sortable/jquery-ui.min.css"/>
 @endpush
 
-<div class="row">
-    <div class="col-12 col-md-6">
-
-        <div class="form-group mt-30 d-flex align-items-center justify-content-between mb-5" style="display: none;">
-            {{-- <label class="cursor-pointer input-label" for="subscribeSwitch">{{ trans('update.include_subscribe') }}</label> --}}
-            <div class="custom-control custom-switch" style="display: none;">
-                <input checked type="checkbox" name="subscribe" class="custom-control-input" id="subscribeSwitch" {{ !empty($webinar) && $webinar->subscribe ? 'checked' : (old('subscribe') ? 'checked' : '')  }}>
-                {{-- <label class="custom-control-label" for="subscribeSwitch"></label> --}}
-            </div>
-        </div>
-
-        {{-- <div>
-            <p class="font-12 text-gray">- {{ trans('forms.subscribe_hint') }}</p>
-        </div> --}}
-
-        {{-- <div class="form-group mt-15">
-            <label class="input-label">{{ trans('update.access_days') }} ({{ trans('public.optional') }})</label>
-            <input type="number" name="access_days" value="{{ !empty($webinar) ? $webinar->access_days : old('access_days') }}" class="form-control @error('access_days')  is-invalid @enderror"/>
-            @error('access_days')
-            <div class="invalid-feedback">
-                {{ $message }}
-            </div>
-            @enderror
-            <p class="font-12 text-gray mt-10">- {{ trans('update.access_days_input_hint') }}</p>
-        </div> --}}
-
-        <div class="form-group mt-15">
-            <label class="input-label">{{ trans('public.price') }} ({{ $currency }})</label>
-            <input value="0" type="number" name="price" value="{{ (!empty($webinar) and !empty($webinar->price)) ? convertPriceToUserCurrency($webinar->price) : old('price') }}" class="form-control @error('price')  is-invalid @enderror" placeholder="{{ trans('public.0_for_free') }}"/>
-            @error('price')
-            <div class="invalid-feedback">
-                {{ $message }}
-            </div>
-            @enderror
-        </div>
-
-        {{-- @if($authUser->isOrganization() and $authUser->id == $webinar->creator_id)
-            <div class="form-group mt-15">
-                <label class="input-label">{{ trans('update.organization_price') }} ({{ $currency }})</label>
-                <input type="number" name="organization_price" value="{{ (!empty($webinar) and $webinar->organization_price) ? convertPriceToUserCurrency($webinar->organization_price) : old('organization_price') }}" class="form-control @error('organization_price')  is-invalid @enderror" placeholder=""/>
-                @error('organization_price')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
-                @enderror
-                <p class="font-12 text-gray mt-5">- {{ trans('update.organization_price_hint') }}</p>
-            </div>
-        @endif --}}
-    </div>
-</div>
-
-<section class="mt-30">
+<section class="mt-50">
     <div class="">
-        <h2 class="section-title after-line">{{ trans('webinars.sale_plans') }} ({{ trans('public.optional') }})</h2>
-
-
-        <div class="mt-15">
-            <p class="font-12 text-gray">- {{ trans('webinars.sale_plans_hint_1') }}</p>
-            <p class="font-12 text-gray">- {{ trans('webinars.sale_plans_hint_2') }}</p>
-            <p class="font-12 text-gray">- {{ trans('webinars.sale_plans_hint_3') }}</p>
-        </div>
+        <h2 class="section-title after-line">{{ trans('public.chapters') }} ({{ trans('public.optional') }})</h2>
     </div>
 
-    <button id="webinarAddTicket" data-webinar-id="{{ $webinar->id }}" type="button" class="btn btn-primary btn-sm mt-15">{{ trans('public.add_plan') }}</button>
-
-    <div class="row mt-10">
-        <div class="col-12">
-
-            <div class="accordion-content-wrapper mt-15 li" id="ticketsAccordion" role="tablist" aria-multiselectable="true">
-                @if(!empty($webinar->tickets) and count($webinar->tickets))
-                    <ul class="draggable-lists" data-order-table="tickets">
-                        @foreach($webinar->tickets as $ticketInfo)
-                            @include('web.default.panel.webinar.create_includes.accordions.ticket',['webinar' => $webinar,'ticket' => $ticketInfo])
-                        @endforeach
-                    </ul>
-                @else
-                    @include(getTemplate() . '.includes.no-result',[
-                        'file_name' => 'ticket.png',
-                        'title' => trans('public.ticket_no_result'),
-                        'hint' => trans('public.ticket_no_result_hint'),
-                    ])
-                @endif
-            </div>
-        </div>
+    <button type="button" class="js-add-chapter btn btn-primary btn-sm mt-15" data-webinar-id="{{ $webinar->id }}">{{ trans('public.new_chapter') }}</button>
+    <div>
+    @include('web.default.panel.webinar.create_includes.accordions.chapter')
     </div>
 </section>
 
-<div id="newTicketForm" class="d-none">
-    @include('web.default.panel.webinar.create_includes.accordions.ticket',['webinar' => $webinar])
+@if($webinar->isWebinar())
+    <div id="newSessionForm" class="d-none">
+        @include('web.default.panel.webinar.create_includes.accordions.session',['webinar' => $webinar])
+    </div>
+@endif
+
+<div id="newFileForm" class="d-none">
+    @include('web.default.panel.webinar.create_includes.accordions.file',['webinar' => $webinar])
 </div>
 
+@if(getFeaturesSettings('new_interactive_file'))
+    <div id="newInteractiveFileForm" class="d-none">
+        @include('web.default.panel.webinar.create_includes.accordions.new_interactive_file',['webinar' => $webinar])
+    </div>
+@endif
+
+
+<div id="newTextLessonForm" class="d-none">
+    @include('web.default.panel.webinar.create_includes.accordions.text-lesson',['webinar' => $webinar])
+</div>
+
+<div id="newQuizForm" class="d-none">
+    @include('web.default.panel.webinar.create_includes.accordions.quiz',['webinar' => $webinar, 'quizInfo' => null, 'webinarChapterPages' => true])
+</div>
+
+@if(getFeaturesSettings('webinar_assignment_status'))
+    <div id="newAssignmentForm" class="d-none">
+        @include('web.default.panel.webinar.create_includes.accordions.assignment',['webinar' => $webinar])
+    </div>
+@endif
+
+@include('web.default.panel.webinar.create_includes.chapter_modal')
+
+@include('web.default.panel.webinar.create_includes.change_chapter_modal')
+
 @push('scripts_bottom')
+    <script src="/assets/default/vendors/select2/select2.min.js"></script>
     <script src="/assets/default/vendors/daterangepicker/daterangepicker.min.js"></script>
+    <script src="/assets/vendors/summernote/summernote-bs4.min.js"></script>
     <script src="/assets/default/vendors/sortable/jquery-ui.min.js"></script>
+
+    <script>
+        var requestFailedLang = '{{ trans('public.request_failed') }}';
+        var thisLiveHasEndedLang = '{{ trans('update.this_live_has_been_ended') }}';
+        var saveSuccessLang = '{{ trans('webinars.success_store') }}';
+        var quizzesSectionLang = '{{ trans('quiz.quizzes_section') }}';
+    </script>
+
+    <script src="/assets/default/js/panel/quiz.min.js"></script>
 @endpush
 </div>

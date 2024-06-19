@@ -10,12 +10,12 @@
             'icon' => 'paper_plus'
         ],
 
-        3 => [
-            'name' => 'pricing',
-            'icon' => 'wallet'
-        ],
+        // 3 => [
+        //     'name' => 'pricing',
+        //     'icon' => 'wallet'
+        // ],
 
-        4 => [
+        3 => [
             'name' => 'content',
             'icon' => 'folder'
         ],
@@ -30,7 +30,7 @@
         //     'icon' => 'tick_square'
         // ],
 
-        5 => [
+        4 => [
             'name' => 'quiz_certificate',
             'icon' => 'ticket_star'
         ],
@@ -38,7 +38,7 @@
     ];
 
     if (empty(getGeneralOptionsSettings('direct_publication_of_courses'))) {
-        $progressSteps[6] = [
+        $progressSteps[5] = [
             'name' => 'message_to_reviewer',
             'icon' => 'shield_done'
         ];
@@ -57,7 +57,7 @@
             </button>
 
             <div class="ml-10 {{ $key == $currentStep ? '' : 'd-lg-none' }}">
-                <span class="font-14 text-gray">{{ trans('webinars.progress_step', ['step' => $key,'count' => 6]) }}</span>
+                <span class="font-14 text-gray">{{ trans('webinars.progress_step', ['step' => $key,'count' => 5]) }}</span>
                 {{-- <span class="font-14 text-gray">{{ trans('webinars.progress_step', ['step' => $key,'count' => $stepCount]) }}</span> --}}
                 <h4 class="font-16 text-secondary font-weight-bold">{{ trans('public.' . $step['name']) }}</h4>
             </div>
