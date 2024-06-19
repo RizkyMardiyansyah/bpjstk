@@ -23628,7 +23628,8 @@ p {
 
 .quiz-form .question-multi-answers .answer-item .answer-label {
   cursor: pointer;
-  height: 100%;
+  padding: 10px;
+  height: auto;
   border-radius: 15px;
   border: 1px solid #ececec;
   text-align: center;

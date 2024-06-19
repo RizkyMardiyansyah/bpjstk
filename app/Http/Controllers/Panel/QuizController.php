@@ -272,7 +272,7 @@ class QuizController extends Controller
     public function update(Request $request, $id)
     {
         $user = auth()->user();
-
+        $data = $request->get('ajax')[$id];
         $webinar = null;
         if (!empty($data['webinar_id'])) {
             $webinar = Webinar::where('id', $data['webinar_id'])
@@ -281,6 +281,7 @@ class QuizController extends Controller
                         ->orWhere('creator_id', $user->id);
                 })->first();
         }
+      
 
 
         $quiz = Quiz::query()->where('id', $id)
@@ -292,7 +293,7 @@ class QuizController extends Controller
                 }
             })
             ->first();
-
+          
         if (!empty($quiz)) {
             $quizQuestionsCount = $quiz->quizQuestions->count();
 
@@ -321,7 +322,6 @@ class QuizController extends Controller
                     ->where('webinar_id', $webinar->id)
                     ->first();
             }
-
             $quiz->update([
                 'webinar_id' => !empty($webinar) ? $webinar->id : null,
                 'chapter_id' => !empty($chapter) ? $chapter->id : null,
