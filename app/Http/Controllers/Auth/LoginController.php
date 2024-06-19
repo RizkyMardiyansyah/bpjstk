@@ -269,7 +269,10 @@ class LoginController extends Controller
 
         if ($user->isAdmin()) {
             return redirect(getAdminPanelUrl() . '');
-        } else {
+        }elseif ($user->isUser()){
+            return redirect('/course/Cegos-Modul');
+        }
+         else {
             // Mengambil URL referer dari sesi
             $referer = $request->get("redirect");
             $home = url('/');
