@@ -99,7 +99,7 @@ return [
     'price' => 'Price',
     '0_for_free' => 'Enter 0 for Free',
     'free' => 'Free',
-    'enroll_on_webinar' => 'Enroll on Course',
+    'enroll_on_webinar' => 'Join Course',
     'free_meetings' => 'Free Sessions',
     'select_a_partner_teacher' => 'Select a partner Contributor',
     'select_a_teacher' => 'Select an Contributor',
