@@ -148,7 +148,7 @@
                                                 <a href="/panel/webinars/{{ $webinar->id }}/statistics" class="webinar-actions d-block mt-10">{{ trans('update.statistics') }}</a>
 
                                                 @if($webinar->creator_id == $authUser->id)
-                                                    <a href="/panel/webinars/{{ $webinar->id }}/delete" class="webinar-actions d-block mt-10 text-danger delete-action">{{ trans('public.delete') }}</a>
+                                                    <a href="/panel/webinars/{{ $webinar->id }}/delete" class="webinar-actions d-block mt-10 text-danger read-action">{{ trans('public.delete') }}</a>
                                                 @endif
                                             </div>
                                         </div>
