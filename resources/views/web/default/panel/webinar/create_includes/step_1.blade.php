@@ -19,14 +19,15 @@
         @endif
 
 
-        <div class="form-group mt-15 ">
+        <div class="form-group mt-15 " style="display:none;">
             <label class="input-label d-block">{{ trans('panel.course_type') }}</label>
 
-            <select name="type" class="custom-select @error('type')  is-invalid @enderror">
+            <select name="type" class="custom-select @error('type') is-invalid @enderror">
                 <option value="webinar" @if(!empty($webinar) and $webinar->isWebinar()) selected @endif>{{ trans('webinars.webinar') }}</option>
                 <option value="course" @if(!empty($webinar) and $webinar->type == 'course') selected @endif>{{ trans('webinars.video_course') }}</option>
-                <option value="text_lesson" @if(!empty($webinar) and $webinar->type == 'text_lesson') selected @endif>{{ trans('webinars.text_lesson') }}</option>
+                <option value="text_lesson" @if(empty($webinar) or $webinar->type == 'text_lesson') selected @endif>{{ trans('webinars.text_lesson') }}</option>
             </select>
+            
 
             @error('type')
             <div class="invalid-feedback">
@@ -37,7 +38,7 @@
 
 
         @if($isOrganization)
-            <div class="form-group mt-15 ">
+            <div style="display: none;" class="form-group mt-15 ">
                 <label class="input-label d-block">{{ trans('public.select_a_teacher') }}</label>
 
                 <select name="teacher_id" class="custom-select @error('teacher_id')  is-invalid @enderror">
@@ -66,7 +67,7 @@
             @enderror
         </div>
 
-        <div class="form-group mt-15">
+        <div class="form-group mt-15" style="display: none;">
             <label class="input-label">{{ trans('public.seo_description') }}</label>
             <input type="text" name="seo_description" value="{{ (!empty($webinar) and !empty($webinar->translate($locale))) ? $webinar->translate($locale)->seo_description : old('seo_description') }}" class="form-control @error('seo_description')  is-invalid @enderror " placeholder="{{ trans('forms.50_160_characters_preferred') }}"/>
             @error('seo_description')
@@ -110,7 +111,7 @@
             </div>
         </div>
 
-        <div class="form-group mt-25">
+        <div class="form-group mt-25" style="display: none;">
             <label class="input-label">{{ trans('public.demo_video') }} ({{ trans('public.optional') }})</label>
 
             <div class="">
@@ -125,7 +126,7 @@
             </div>
         </div>
 
-        <div class="form-group mt-0">
+        <div class="form-group mt-0" style="display: none;">
             <label class="input-label font-12">{{ trans('update.path') }}</label>
             <div class="input-group js-video-demo-path-input">
                 <div class="input-group-prepend">

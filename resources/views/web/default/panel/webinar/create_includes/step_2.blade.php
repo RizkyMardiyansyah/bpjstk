@@ -8,7 +8,7 @@
     <div class="col-12 col-md-6 mt-15">
 
 
-        <div class="form-group mt-15">
+        <div class="form-group mt-15" style="display: none;">
             <label class="input-label">{{ trans('public.capacity') }}</label>
             <input type="number" name="capacity" value="{{ (!empty($webinar) and !empty($webinar->capacity)) ? $webinar->capacity : old('capacity') }}" class="form-control @error('capacity')  is-invalid @enderror" placeholder="{{ trans('forms.capacity_placeholder') }}"/>
             @error('capacity')
@@ -90,7 +90,7 @@
             </div>
         @endif
 
-        <div class="form-group mt-30 d-flex align-items-center justify-content-between mb-5">
+        {{-- <div class="form-group mt-30 d-flex align-items-center justify-content-between mb-5" >
             <label class="cursor-pointer input-label" for="forumSwitch">{{ trans('update.course_forum') }}</label>
             <div class="custom-control custom-switch">
                 <input type="checkbox" name="forum" class="custom-control-input" id="forumSwitch" {{ !empty($webinar) && $webinar->forum ? 'checked' : (old('forum') ? 'checked' : '')  }}>
@@ -100,15 +100,15 @@
 
         <div>
             <p class="font-12 text-gray">- {{ trans('update.panel_course_forum_hint') }}</p>
-        </div>
+        </div> --}}
 
-        <div class="form-group mt-30 d-flex align-items-center justify-content-between">
+        {{-- <div class="form-group mt-30 d-flex align-items-center justify-content-between">
             <label class="cursor-pointer input-label" for="supportSwitch">{{ trans('webinars.support') }}</label>
             <div class="custom-control custom-switch">
                 <input type="checkbox" name="support" class="custom-control-input" id="supportSwitch" {{ ((!empty($webinar) && $webinar->support) or old('support') == 'on') ? 'checked' :  '' }}>
                 <label class="custom-control-label" for="supportSwitch"></label>
             </div>
-        </div>
+        </div> --}}
 
         <div class="form-group mt-30 d-flex align-items-center justify-content-between">
             <label class="cursor-pointer input-label" for="certificateSwitch">{{ trans('update.include_certificate') }}</label>
@@ -130,13 +130,13 @@
             </div>
         </div>
 
-        <div class="form-group mt-30 d-flex align-items-center justify-content-between">
+        {{-- <div class="form-group mt-30 d-flex align-items-center justify-content-between">
             <label class="cursor-pointer input-label" for="partnerInstructorSwitch">{{ trans('public.partner_instructor') }}</label>
             <div class="custom-control custom-switch">
                 <input type="checkbox" name="partner_instructor" class="custom-control-input" id="partnerInstructorSwitch" {{ ((!empty($webinar) && $webinar->partner_instructor) or old('partner_instructor') == 'on') ? 'checked' : ''  }}>
                 <label class="custom-control-label" for="partnerInstructorSwitch"></label>
             </div>
-        </div>
+        </div> --}}
 
 
         <div id="partnerInstructorInput" class="form-group mt-15 {{ ((!empty($webinar) && $webinar->partner_instructor) or old('partner_instructor') == 'on') ? '' : 'd-none' }}">

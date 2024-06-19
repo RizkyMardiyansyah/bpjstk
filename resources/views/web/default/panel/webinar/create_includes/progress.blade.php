@@ -20,17 +20,17 @@
             'icon' => 'folder'
         ],
 
+        // 5 => [
+        //     'name' => 'prerequisites',
+        //     'icon' => 'video'
+        // ],
+
+        // 6 => [
+        //     'name' => 'faq',
+        //     'icon' => 'tick_square'
+        // ],
+
         5 => [
-            'name' => 'prerequisites',
-            'icon' => 'video'
-        ],
-
-        6 => [
-            'name' => 'faq',
-            'icon' => 'tick_square'
-        ],
-
-        7 => [
             'name' => 'quiz_certificate',
             'icon' => 'ticket_star'
         ],
@@ -38,7 +38,7 @@
     ];
 
     if (empty(getGeneralOptionsSettings('direct_publication_of_courses'))) {
-        $progressSteps[8] = [
+        $progressSteps[6] = [
             'name' => 'message_to_reviewer',
             'icon' => 'shield_done'
         ];

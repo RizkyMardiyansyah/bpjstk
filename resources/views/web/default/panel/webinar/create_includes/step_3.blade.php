@@ -8,19 +8,19 @@
 <div class="row">
     <div class="col-12 col-md-6">
 
-        <div class="form-group mt-30 d-flex align-items-center justify-content-between mb-5">
-            <label class="cursor-pointer input-label" for="subscribeSwitch">{{ trans('update.include_subscribe') }}</label>
-            <div class="custom-control custom-switch">
-                <input type="checkbox" name="subscribe" class="custom-control-input" id="subscribeSwitch" {{ !empty($webinar) && $webinar->subscribe ? 'checked' : (old('subscribe') ? 'checked' : '')  }}>
-                <label class="custom-control-label" for="subscribeSwitch"></label>
+        <div class="form-group mt-30 d-flex align-items-center justify-content-between mb-5" style="display: none;">
+            {{-- <label class="cursor-pointer input-label" for="subscribeSwitch">{{ trans('update.include_subscribe') }}</label> --}}
+            <div class="custom-control custom-switch" style="display: none;">
+                <input checked type="checkbox" name="subscribe" class="custom-control-input" id="subscribeSwitch" {{ !empty($webinar) && $webinar->subscribe ? 'checked' : (old('subscribe') ? 'checked' : '')  }}>
+                {{-- <label class="custom-control-label" for="subscribeSwitch"></label> --}}
             </div>
         </div>
 
-        <div>
+        {{-- <div>
             <p class="font-12 text-gray">- {{ trans('forms.subscribe_hint') }}</p>
-        </div>
+        </div> --}}
 
-        <div class="form-group mt-15">
+        {{-- <div class="form-group mt-15">
             <label class="input-label">{{ trans('update.access_days') }} ({{ trans('public.optional') }})</label>
             <input type="number" name="access_days" value="{{ !empty($webinar) ? $webinar->access_days : old('access_days') }}" class="form-control @error('access_days')  is-invalid @enderror"/>
             @error('access_days')
@@ -29,11 +29,11 @@
             </div>
             @enderror
             <p class="font-12 text-gray mt-10">- {{ trans('update.access_days_input_hint') }}</p>
-        </div>
+        </div> --}}
 
         <div class="form-group mt-15">
             <label class="input-label">{{ trans('public.price') }} ({{ $currency }})</label>
-            <input type="number" name="price" value="{{ (!empty($webinar) and !empty($webinar->price)) ? convertPriceToUserCurrency($webinar->price) : old('price') }}" class="form-control @error('price')  is-invalid @enderror" placeholder="{{ trans('public.0_for_free') }}"/>
+            <input value="0" type="number" name="price" value="{{ (!empty($webinar) and !empty($webinar->price)) ? convertPriceToUserCurrency($webinar->price) : old('price') }}" class="form-control @error('price')  is-invalid @enderror" placeholder="{{ trans('public.0_for_free') }}"/>
             @error('price')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -41,7 +41,7 @@
             @enderror
         </div>
 
-        @if($authUser->isOrganization() and $authUser->id == $webinar->creator_id)
+        {{-- @if($authUser->isOrganization() and $authUser->id == $webinar->creator_id)
             <div class="form-group mt-15">
                 <label class="input-label">{{ trans('update.organization_price') }} ({{ $currency }})</label>
                 <input type="number" name="organization_price" value="{{ (!empty($webinar) and $webinar->organization_price) ? convertPriceToUserCurrency($webinar->organization_price) : old('organization_price') }}" class="form-control @error('organization_price')  is-invalid @enderror" placeholder=""/>
@@ -52,7 +52,7 @@
                 @enderror
                 <p class="font-12 text-gray mt-5">- {{ trans('update.organization_price_hint') }}</p>
             </div>
-        @endif
+        @endif --}}
     </div>
 </div>
 
