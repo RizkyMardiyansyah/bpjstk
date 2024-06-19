@@ -71,14 +71,14 @@
     }
 
     // Fungsi untuk menangani perubahan pada checkbox
-    function handleCheckboxChange() {
-        var allChecked = checkAllCheckboxes();
+    // function handleCheckboxChange() {
+    //     var allChecked = checkAllCheckboxes();
 
-        // Jika semua checkbox telah dicentang, alihkan ke halaman panel/diary/create
-        if (allChecked) {
-            window.location.href = '/panel/diary/create';
-        }
-    }
+    //     // Jika semua checkbox telah dicentang, alihkan ke halaman panel/diary/create
+    //     if (allChecked) {
+    //         window.location.href = '/panel/diary/create';
+    //     }
+    // }
 
     // Menambahkan event listener untuk setiap checkbox
     var checkboxes = document.querySelectorAll('.js-passed-lesson-toggle');
