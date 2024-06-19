@@ -23614,7 +23614,7 @@ p {
 .quiz-form .question-multi-answers .answer-item {
   position: relative;
   width: 100%;
-  height: 250px;
+  height: auto;
 }
 
 .quiz-form .question-multi-answers .answer-item .correct {
@@ -23629,7 +23629,7 @@ p {
 .quiz-form .question-multi-answers .answer-item .answer-label {
   cursor: pointer;
   padding: 10px;
-  height: 0px;
+  height: auto;
   border-radius: 15px;
   border: 1px solid #ececec;
   text-align: center;
