@@ -78,7 +78,7 @@ return [
     'previous_question' => 'Previous question',
     'next_question' => 'Next question',
     'remaining_time' => 'Remained time',
-    'download_certificate' => 'Download certificate',
+    'download_certificate' => 'Show certificate',
     'you_can_download_certificate' => 'Now you can download your certificate.',
 
     'status_failed_title' => 'Sorry, You failed the exam.',

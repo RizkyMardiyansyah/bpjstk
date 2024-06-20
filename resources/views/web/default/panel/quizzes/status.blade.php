@@ -64,7 +64,7 @@
                             @endif
 
                             <div class=" mt-25">
-                                <a href="/panel/quizzes/my-results" class="btn btn-sm btn-primary">{{ trans('public.show_results') }}</a>
+                                {{-- <a href="/panel/quizzes/my-results" class="btn btn-sm btn-primary">{{ trans('public.show_results') }}</a> --}}
 
                                 @if($quiz->certificate)
                                     <a href="/panel/quizzes/results/{{ $quizResult->id }}/showCertificate" class="btn btn-sm btn-primary">{{ trans('quiz.download_certificate') }}</a>
