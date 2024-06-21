@@ -220,7 +220,9 @@ class CertificateController extends Controller
             $font->file($isRtl ? public_path('assets/default/fonts/vazir/Vazir-Medium.ttf') : public_path('assets/default/fonts/Montserrat-Medium.ttf'));
             $font->size($data['font_size']);
             $font->color($data['text_color']);
-            $font->align($isRtl ? 'right' : 'left');
+            $font->align('center'); // Mengatur teks menjadi rata tengah
+
+   
         });
         return $img->response('png');
     }

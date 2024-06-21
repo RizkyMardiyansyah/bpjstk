@@ -38,8 +38,13 @@ class MakeCertificate
                 'body' => $body,
             ];*/
 
-            $img = $this->makeImage($template, $body);
-            return $img->response('png');
+            $img = $this->makeImage($template, $body)->encode("png");
+            $headers = [
+                'Content-Disposition' => 'attachment; filename='. 'Certificate Of Completion.png',
+            ];
+            return response()->stream(function() use ($img) {
+                echo $img;
+            }, 200, $headers);
         }
 
         abort(404);
@@ -106,7 +111,7 @@ class MakeCertificate
             $font->file($certificateTemplate->rtl ? public_path('assets/default/fonts/vazir/Vazir-Medium.ttf') : public_path('assets/default/fonts/Montserrat-Medium.ttf'));
             $font->size($certificateTemplate->font_size);
             $font->color($certificateTemplate->text_color);
-            $font->align($certificateTemplate->rtl ? 'right' : 'left');
+            $font->align('center');
         });
 
         return $img;
